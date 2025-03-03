@@ -3,26 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architect - Home</title>
+    <title>Architectenbureau Els Haesaerts</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Garamond, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .logo-container {
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+        }
+        .logo-container img {
+            height: 150px;
+            margin-right: 20px;
+        }
+        header {
+            background: #f5f5f5;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: rgb(255, 255, 255);
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            padding-left: 100px;
+        }
+        .title-container {
+            background: url('plannen.png') center/cover no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 150px;
+            padding: 20px;
             text-align: center;
+            position: relative;
+            background-color: rgba(32, 30, 30, 0.1);
+            z-index: 1;
+        }
+        .title-container h1 {
+            z-index: 2;
+            position: relative;
+            font-size: 46px;
+            color: rgb(255, 255, 255);
         }
         nav {
-            background-color: #09e91c;
+            background-color: #f75646;
             padding: 15px;
+            display: flex;
+            justify-content: center;
+            z-index: 3;
         }
         nav a {
-            color: rgb(255, 255, 255);
+            color: white;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #ff0000bb;
+            border-radius: 5px;
         }
         .container {
-            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 50px 20px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .projects img, .new-projects img, .renovation-projects img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
         }
         .hidden {
             display: none;
@@ -30,26 +109,78 @@
     </style>
 </head>
 <body>
+    <!-- Logo naast de titel -->
+    <div class="logo-container">
+        <img src="logo.jpg" alt="Logo">
+    </div>
+    
+    <!-- Titel container met achtergrond en transparantie -->
+    <div class="title-container">
+        <h1>Architectenbureau Els Haesaerts</h1>
+    </div>
+
     <nav>
-        <a href="#" onclick="showTab('home')">Home</a>
-        <a href="#" onclick="showTab('projecten')">Projecten</a>
-        <a href="#" onclick="showTab('contact')">Contact</a>
+        <a href="#home" onclick="showTab('home')">Home</a>
+        <a href="#projecten" onclick="showTab('projecten')">Projecten</a>
+        <a href="#nieuwbouw" onclick="showTab('nieuwbouw')">Nieuwbouw</a>
+        <a href="#verbouwing" onclick="showTab('verbouwing')">Verbouwing</a>
+        <a href="#contact" onclick="showTab('contact')">Contact</a>
     </nav>
     
     <div class="container" id="home">
-        <h1>Welkom bij Architect XYZ</h1>
-        <p>Wij ontwerpen unieke en innovatieve gebouwen.</p>
+        <h1>Welkom bij Architectenbureau Els Haesaerts</h1>
+        <p>Architecte Els Haesaerts kiest er bewust voor om regionaal te werken.
+            Haar projecten liggen allemaal in de omgeving van Kortenberg, waar haar kantoor gevestigd is. Daardoor kan zij werkzaamheden letterlijk van zeer nabij opvolgen en zeer vlug inspringen waar nodig.
+            
+            Bij Els kunt u zowel terecht voor nieuwbouw als voor verbouwingen, en zowel voor een klassieke als voor een moderne bouwstijl.
+            
+            Samen met u brengt zij uw droom van misschien wel het belangrijkste project van uw leven in kaart en onderzoekt vervolgens hoe die kan worden gerealiseerd. Dit steeds in overleg met u.
+            
+            Klantentevredenheid is voor Els immers geen loos woord.</p>
     </div>
     
     <div class="container hidden" id="projecten">
-        <h1>Onze Projecten</h1>
-        <p>Hier vindt u een overzicht van onze recente projecten.</p>
+        <h1>Projecten</h1>
+        <div class="projects">
+            <img src="project1.jpg" alt="Moderne villa in Kortenberg">
+            <p>Appartementencomplex Sint-Stevens Woluwe</p>
+            <img src="project2.jpg" alt="Stadswoning renovatie Leuven">
+            <p>Stadswoning renovatie Leuven</p>
+        </div>
+    </div>
+
+    <!-- Nieuwbouw sectie -->
+    <div class="container hidden" id="nieuwbouw">
+        <h1>Nieuwbouw Projecten</h1>
+        <p>Wij bieden op maat gemaakte nieuwbouwprojecten die passen bij uw wensen en het budget. Onze ontwerpen combineren functionaliteit en esthetiek.</p>
+        
+        <!-- Voeg hier afbeeldingen toe voor nieuwbouw -->
+        <div class="new-projects">
+            <img src="nieuwbouw1.jpg" alt="Nieuwbouw project 1">
+            <img src="nieuwbouw2.jpg" alt="Nieuwbouw project 2">
+        </div>
+    </div>
+
+    <!-- Verbouwing sectie -->
+    <div class="container hidden" id="verbouwing">
+        <h1>Verbouwingsprojecten</h1>
+        <p>Wij helpen u graag bij het renoveren of verbouwen van uw woning. Van traditionele renovaties tot moderne herinrichtingen, wij zorgen voor vakwerk.</p>
+        
+        <!-- Voeg hier afbeeldingen toe voor verbouwing -->
+        <div class="renovation-projects">
+            <img src="verbouwing1.jpg" alt="Verbouwingsproject 1">
+            <img src="verbouwing2.jpg" alt="Verbouwingsproject 2">
+        </div>
     </div>
     
     <div class="container hidden" id="contact">
         <h1>Contacteer Ons</h1>
-        <p>Email: info@architectxyz.com</p>
-        <p>Telefoon: 012-3456789</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Naam" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Uw bericht" required></textarea>
+            <button type="submit">Verstuur</button>
+        </form>
     </div>
     
     <script>
